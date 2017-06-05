@@ -13,7 +13,7 @@ public class UserBean {
     @Override
     public String toString() {
         return "UserBean{" +
-                "name=" + name.get() +
+                "name=a" + name.get() +
                 ", sex=" + sex.get() +
                 '}';
     }
