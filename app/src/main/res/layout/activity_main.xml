@@ -1,0 +1,108 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <!--        <import type="com.example.zxy.testmvvm.viewmodel.MainViewModel" alias="MainViewModel" />
+                <variable name="viewModel" type="MainViewModel"/>-->
+        <variable
+            name="viewModel"
+            type="com.example.zxy.testmvvm.viewmodel.MainViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.example.zxy.testmvvm.view.SuperTextView
+            android:visibility="gone"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="Object-oriented programing analysis design"
+            app:autoAdjust="true"
+            app:corner="25dp"
+            app:isShowState="true"
+            app:left_bottom_corner="true"
+            app:left_top_corner="true"
+            app:right_bottom_corner="true"
+            app:right_top_corner="true"
+            app:solid="@color/colorPrimaryDark"
+
+            app:state_drawable="@drawable/emoji_kiss"
+            app:state_drawable_height="30dp"
+            app:state_drawable_mode="center"
+            app:state_drawable_padding_left="10dp"
+            app:state_drawable_padding_top="10dp"
+            app:state_drawable_width="30dp"
+
+            app:stroke_color="@color/colorPrimaryDark"
+            app:stroke_width="2dp"
+            app:text_fill_color="@color/colorPrimaryDark"
+            app:text_stroke="true"
+            app:text_stroke_color="@color/colorPrimaryDark"
+            app:text_stroke_width="1dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <CheckBox
+                android:id="@+id/checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={viewModel.user.name}" />
+
+            <EditText
+                android:id="@+id/et_sex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={viewModel.user.sex}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.user.name}" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.user.sex}" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{(view) -> viewModel.onSaveClick()}"
+                android:text="save" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{(view) -> viewModel.upData()}"
+                android:text="updata" />
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recle_view"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                android:background="@color/colorPrimaryDark">
+
+            </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>
