@@ -18,7 +18,7 @@ class MySqlOpenHelper1(context: Context) : SQLiteOpenHelper(context.applicationC
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-        Log.e("DataBaseHelper", "数据库更新")
+        Log.e("DataBaseHelper", "数据库更a新")
 
     }
 
